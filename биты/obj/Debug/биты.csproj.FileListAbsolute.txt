@@ -1,0 +1,7 @@
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\биты\bin\Debug\биты.exe.config
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\биты\bin\Debug\биты.exe
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\биты\bin\Debug\биты.pdb
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\биты\obj\Debug\биты.csprojAssemblyReference.cache
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\биты\obj\Debug\биты.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\биты\obj\Debug\биты.exe
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\биты\obj\Debug\биты.pdb

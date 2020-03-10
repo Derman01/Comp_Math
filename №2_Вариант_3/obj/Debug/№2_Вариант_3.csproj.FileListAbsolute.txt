@@ -1,0 +1,14 @@
+C:\Users\Denis\source\repos\№2_Вариант_3\bin\Debug\№2_Вариант_3.exe.config
+C:\Users\Denis\source\repos\№2_Вариант_3\bin\Debug\№2_Вариант_3.exe
+C:\Users\Denis\source\repos\№2_Вариант_3\bin\Debug\№2_Вариант_3.pdb
+C:\Users\Denis\source\repos\№2_Вариант_3\obj\Debug\№2_Вариант_3.csprojAssemblyReference.cache
+C:\Users\Denis\source\repos\№2_Вариант_3\obj\Debug\№2_Вариант_3.csproj.CoreCompileInputs.cache
+C:\Users\Denis\source\repos\№2_Вариант_3\obj\Debug\№2_Вариант_3.exe
+C:\Users\Denis\source\repos\№2_Вариант_3\obj\Debug\№2_Вариант_3.pdb
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№2_Вариант_3\obj\Debug\№2_Вариант_3.csprojAssemblyReference.cache
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№2_Вариант_3\obj\Debug\№2_Вариант_3.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№2_Вариант_3\obj\Debug\№2_Вариант_3.exe
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№2_Вариант_3\obj\Debug\№2_Вариант_3.pdb
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№2_Вариант_3\bin\Debug\№2_Вариант_3.exe.config
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№2_Вариант_3\bin\Debug\№2_Вариант_3.exe
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№2_Вариант_3\bin\Debug\№2_Вариант_3.pdb

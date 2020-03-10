@@ -1,0 +1,7 @@
+C:\Users\Denis\source\repos\№3_вариант_3\bin\Debug\№3_вариант_3.exe.config
+C:\Users\Denis\source\repos\№3_вариант_3\bin\Debug\№3_вариант_3.exe
+C:\Users\Denis\source\repos\№3_вариант_3\bin\Debug\№3_вариант_3.pdb
+C:\Users\Denis\source\repos\№3_вариант_3\obj\Debug\№3_вариант_3.csprojAssemblyReference.cache
+C:\Users\Denis\source\repos\№3_вариант_3\obj\Debug\№3_вариант_3.csproj.CoreCompileInputs.cache
+C:\Users\Denis\source\repos\№3_вариант_3\obj\Debug\№3_вариант_3.exe
+C:\Users\Denis\source\repos\№3_вариант_3\obj\Debug\№3_вариант_3.pdb

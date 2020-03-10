@@ -1,0 +1,7 @@
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№1_варинт_3\bin\Debug\№1_варинт_3.exe.config
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№1_варинт_3\bin\Debug\№1_варинт_3.exe
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№1_варинт_3\bin\Debug\№1_варинт_3.pdb
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№1_варинт_3\obj\Debug\№1_варинт_3.csprojAssemblyReference.cache
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№1_варинт_3\obj\Debug\№1_варинт_3.csproj.CoreCompileInputs.cache
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№1_варинт_3\obj\Debug\№1_варинт_3.exe
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\№1_варинт_3\obj\Debug\№1_варинт_3.pdb

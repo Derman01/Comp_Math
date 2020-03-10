@@ -1,0 +1,14 @@
+C:\Users\Denis\source\repos\задание_9 (код грея)\bin\Debug\задание_9 (код грея).exe.config
+C:\Users\Denis\source\repos\задание_9 (код грея)\bin\Debug\задание_9 (код грея).exe
+C:\Users\Denis\source\repos\задание_9 (код грея)\bin\Debug\задание_9 (код грея).pdb
+C:\Users\Denis\source\repos\задание_9 (код грея)\obj\Debug\задание_9 (код грея).csprojAssemblyReference.cache
+C:\Users\Denis\source\repos\задание_9 (код грея)\obj\Debug\задание_9 (код грея).csproj.CoreCompileInputs.cache
+C:\Users\Denis\source\repos\задание_9 (код грея)\obj\Debug\задание_9 (код грея).exe
+C:\Users\Denis\source\repos\задание_9 (код грея)\obj\Debug\задание_9 (код грея).pdb
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\задание_9 (код грея)\bin\Debug\задание_9 (код грея).exe.config
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\задание_9 (код грея)\bin\Debug\задание_9 (код грея).exe
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\задание_9 (код грея)\bin\Debug\задание_9 (код грея).pdb
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\задание_9 (код грея)\obj\Debug\задание_9 (код грея).csprojAssemblyReference.cache
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\задание_9 (код грея)\obj\Debug\задание_9 (код грея).csproj.CoreCompileInputs.cache
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\задание_9 (код грея)\obj\Debug\задание_9 (код грея).exe
+C:\Users\Denis\Documents\__ПАРЫ__\Дискретка\задание_9 (код грея)\obj\Debug\задание_9 (код грея).pdb

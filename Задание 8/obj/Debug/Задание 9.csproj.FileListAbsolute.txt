@@ -1,0 +1,7 @@
+C:\Users\Denis\source\repos\Задание 9\bin\Debug\Задание 9.exe.config
+C:\Users\Denis\source\repos\Задание 9\bin\Debug\Задание 9.exe
+C:\Users\Denis\source\repos\Задание 9\bin\Debug\Задание 9.pdb
+C:\Users\Denis\source\repos\Задание 9\obj\Debug\Задание 9.csprojAssemblyReference.cache
+C:\Users\Denis\source\repos\Задание 9\obj\Debug\Задание 9.csproj.CoreCompileInputs.cache
+C:\Users\Denis\source\repos\Задание 9\obj\Debug\Задание 9.exe
+C:\Users\Denis\source\repos\Задание 9\obj\Debug\Задание 9.pdb
