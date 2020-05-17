@@ -4,112 +4,107 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Дейкстри
+namespace _2_9
 {
     class Program
     {
-
-        static (int[], int[]) Deykstri(int[,] C, int s, int t)
+        
+        static HashSet<(string x1, string x2)> Corteg_Read()//Создание пар отношения
         {
-            //шаг 1 и 2
-            var T = new int[C.GetLength(0)];
-            for (int i = 0; i < T.Length; i++) T[i] = Int32.MaxValue; T[s] = 0;
-            var X = new int[C.GetLength(0)];   X[s] = 1;
-            var H = new int[C.GetLength(0)]; 
-            //for (int i = 0; i < H.Length; i++) H[i] = -1;
-            var v = s;
+            Console.Write("Введите пары отношения: \n");
+            HashSet<(string x1, string x2)> corteg = new HashSet<(string, string)>(0);
 
-            while (true)
-            {//шаг 3 
-                for (int u = 0; u < C.GetLength(0); u++)
-                    if (X[u] == 0 && T[u] > T[v] + C[v, u] && v != u && C[v, u] != Int32.MaxValue)
-                    {
-                        (T[u], H[u]) = (T[v] + C[v, u], v + 1);
-                    }
-                
-                //шаг 4
-                var m = Int32.MaxValue; v = 0;
-                for (int u = 0; u < C.GetLength(0); u++)
-                    if (X[u] == 0 && T[u] < m)
-                        (v, m) = (u, T[u]);
-                if (v == -1) return (null, null);
-                if (v == t) return (T, H);
-                X[v] = 1;
+            int i = 1; // счетчик
+            Console.Write($"{i}. "); string[] A = Console.ReadLine().Split(' ');
+            if (A.Length != 2) return corteg;
+            while (1 == 1)
+            {
+                corteg.Add((A[0], A[1])); 
+                i++; // увеличиваем счетчик
+                Console.Write($"{i}. "); A = Console.ReadLine().Split(' '); //снова вводим элементы
+                if (A.Length != 2) return corteg;
             }
-           
-           
+
+
+        }
+        
+        static string[][] Ekv(string[] M, HashSet<(string x1,string x2)> corteg)
+        {
+            var B = new string[1][];
+            B[0] = new string[1];
+            foreach (var a in M)
+            {
+                var was = false;
+                for (int i = 0; i < B.Length; i++)
+                    if (corteg.Contains((B[i][0], a)))
+                    {
+                        Array.Resize(ref B[i], B[i].Length + 1);
+                        B[i][B[i].Length - 1] = a;
+                        was = true;
+                        break;
+                    }
+                if (!was)
+                {
+                    Array.Resize(ref B, B.Length + 1);
+                    Array.Resize(ref B[B.Length - 1], 1);
+                    B[B.Length - 1][0] = a;
+                }
+            }
+            return B;
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Ввести самому матрицу?\n 1.ДА\t 2. НЕТ");
-            var matrix = (Console.ReadLine() == "2" ? R : Matrix_Read());
-            Console.Clear();
-            Matrix_Write(matrix);
-            Console.WriteLine("из какой вершины в какую?");
-            var V = Console.ReadLine().Split(' ').Select(s => int.Parse(s)).ToArray();
-            var (T, H) = Deykstri(matrix, V[0] - 1, V[1] - 1);
-            if (T != null)
-            {
-                Massiv_Write("Матрица T", T);
-                Massiv_Write("Матрица H", H);
-            }
-            else Console.WriteLine("Нет пути");
-            var way = Shotcut(H, V[0] - 1, V[1] - 1);
-            Console.WriteLine($"Кратчайший путь из v{V[0]} в v{V[1]}");
-            foreach (var i in way)
-                Console.Write($"v{i} ");
-            Console.ReadKey();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black; Console.Clear();
+
+            Console.WriteLine("1. Ввод пар отношения эквивалентности \n2. Проверка 2ого пунка");
+            if (Console.ReadLine() == "1") Read();
+            else Zadanie_2();
         }
-        static int[,] Matrix_Read()
+        static void Read()
         {
-            Console.Write("Матрица порядка n = "); int n = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите матрицу весов");
-            var matrix = new int[n, n];
-            for (int i = 0; i < n; i++)
+            
+
+            Console.WriteLine("Введите множество: ");
+            var M = Console.ReadLine().Split(' ');
+            var B = Ekv(M, Corteg_Read());
+            foreach (var i in B)
             {
-                var str = Console.ReadLine().Split(' ');
-                for (int j = 0; j < str.Length; j++)
-                    matrix[i, j] = (str[j] == "-" ? Int32.MaxValue : int.Parse(str[j]));
-            }
-            return matrix;
-        }
-        static void Matrix_Write(int[,] matrix)
-        {
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrix.GetLength(1); j++)
-                    Console.Write(matrix[i, j] == Int32.MaxValue ? $"- " : $"{matrix[i, j]} ");
+                foreach (var j in i)
+                    Console.Write(j + " ");
                 Console.WriteLine();
             }
+            Console.ReadKey();
         }
-        static int[,] R = new int[,]
+        static void Zadanie_2()
         {
-           { 0, 11, Int32.MaxValue,5,5,2},
-           {Int32.MaxValue, 0, Int32.MaxValue, Int32.MaxValue, Int32.MaxValue, Int32.MaxValue,},
-           {Int32.MaxValue, 2, 0, Int32.MaxValue, Int32.MaxValue, Int32.MaxValue},
-           {Int32.MaxValue, Int32.MaxValue, 3, 0, Int32.MaxValue, Int32.MaxValue},
-           {Int32.MaxValue, Int32.MaxValue, 2, Int32.MaxValue, 0, Int32.MaxValue},
-           {Int32.MaxValue, Int32.MaxValue, Int32.MaxValue, 1, 3, 0}
-        };
-        static void Massiv_Write(string name, int[] M)
-        {
-            Console.WriteLine( name);
-            foreach (var i in M)
-                Console.Write($"{i} ");
-            Console.WriteLine();
-        }
-        static int[] Shotcut(int[] H, int s, int t)
-        {
-            var cut = new List<int>();
-            cut.Add(t + 1);
-            while (s != t)
+            Console.Write("Получить разбиение множества натуральных чисел,\n" +
+                "непревосходящих "); var N = int.Parse(Console.ReadLine());
+            Console.Write("По отношению <иметь одинаковый остаток от деления на ");
+            int del = int.Parse(Console.ReadLine());
+
+            var A = new int[0];
+            var corteg = new HashSet<(string, string)>();
+
+            for (int i = 1; i <= N; i++) {
+                Array.Resize(ref A, i);
+                A[i - 1] = i;}
+
+            for (int i = 0; i < A.Length; i++)
+                for (int j = 0; j < A.Length; j++)
+                    if (A[i] % del == A[j] % del)
+                        corteg.Add( ( Convert.ToString(A[i]), Convert.ToString(A[j])) ); //создание кортежа
+            var A_2 = A.Select(s => Convert.ToString(s)).ToArray();
+            var B = Ekv(A_2, corteg);
+            foreach (var i in B)
             {
-                cut.Add(H[t]);
-                t = H[t] - 1;
+                foreach (var j in i)
+                    Console.Write(j + " ");
+                Console.WriteLine();
             }
-            cut.Reverse();
-            int[] A = cut.ToArray();
-            return A;
+            Console.ReadKey();
+
+
         }
     }
 }
