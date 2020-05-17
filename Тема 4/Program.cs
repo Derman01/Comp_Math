@@ -1,73 +1,64 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Алгоритм_флойда
+namespace Дейкстри
 {
     class Program
     {
+
+        static (int[], int[]) Deykstri(int[,] C, int s, int t)
+        {
+            //шаг 1 и 2
+            var T = new int[C.GetLength(0)];
+            for (int i = 0; i < T.Length; i++) T[i] = Int32.MaxValue; T[s] = 0;
+            var X = new int[C.GetLength(0)];   X[s] = 1;
+            var H = new int[C.GetLength(0)]; 
+            //for (int i = 0; i < H.Length; i++) H[i] = -1;
+            var v = s;
+
+            while (true)
+            {//шаг 3 
+                for (int u = 0; u < C.GetLength(0); u++)
+                    if (X[u] == 0 && T[u] > T[v] + C[v, u] && v != u && C[v, u] != Int32.MaxValue)
+                    {
+                        (T[u], H[u]) = (T[v] + C[v, u], v + 1);
+                    }
+                
+                //шаг 4
+                var m = Int32.MaxValue; v = 0;
+                for (int u = 0; u < C.GetLength(0); u++)
+                    if (X[u] == 0 && T[u] < m)
+                        (v, m) = (u, T[u]);
+                if (v == -1) return (null, null);
+                if (v == t) return (T, H);
+                X[v] = 1;
+            }
+           
+           
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Ввести самому матрицу?\n 1.ДА\t 2. НЕТ");
-            var matrix = (Console.ReadLine() == "2"? R: Matrix_Read());
+            var matrix = (Console.ReadLine() == "2" ? R : Matrix_Read());
             Console.Clear();
             Matrix_Write(matrix);
-            (var T, var H) = Floid(matrix);
-
-            Console.WriteLine("Матрица длин кратчайших путей:");
-            Matrix_Write(T);
-            Console.WriteLine("Матрица кратчайших путей:");
-            Matrix_Write(H);
-
-            Console.WriteLine("Найти кратчайший путь соединяющий две вершины:");
-            int[] V = Console.ReadLine().Split(' ').Select(s => int.Parse(s)).ToArray();
-            var way = Shortcut(V[0], V[1], H);
-            Console.WriteLine($"Крайтчаший путь от вершины v{V[0]} к v{V[1]}:");
-            
-            foreach (var i in way)
-                Console.Write($"v{i + 1} ");
-
-            Console.ReadKey();
-        }
-
-        static (int[,], int[,]) Floid(int[,] C)
-        {
-            var T = new int[C.GetLength(0), C.GetLength(1)];
-            var H = new int[C.GetLength(0), C.GetLength(1)];
-
-            for (int i = 0; i < C.GetLength(0); i++) //шаг 1
-                for (int j = 0; j < C.GetLength(1); j++) {
-                    T[i, j] = C[i, j];
-                    H[i, j] = C[i, j] == Int32.MaxValue ? 0 : j + 1; 
-                }
-            Matrix_Write(H);
-            for (int i = 0; i < C.GetLength(0); i++) {
-
-                for (int j = 0; j < C.GetLength(1); j++)
-                    for (int k = 0; k < C.GetLength(0); k++)
-                        if (i != j && T[j, i] != Int32.MaxValue && i != k && T[i, k] != Int32.MaxValue && (T[j, k] == Int32.MaxValue || T[j, k] > T[j, i] + T[i, k]))
-                        {
-                            H[j, k] = H[j, i];
-                            T[j, k] = T[j, i] + T[i, k];
-                        }
-                
+            Console.WriteLine("из какой вершины в какую?");
+            var V = Console.ReadLine().Split(' ').Select(s => int.Parse(s)).ToArray();
+            var (T, H) = Deykstri(matrix, V[0] - 1, V[1] - 1);
+            if (T != null)
+            {
+                Massiv_Write("Матрица T", T);
+                Massiv_Write("Матрица H", H);
             }
-
-
-            return (T, H);
-        }
-        static List<int> Shortcut(int i, int j, int[,] H)
-        {
-            var w = --i; j--;
-            var shortcut = new List<int>();
-            shortcut.Add(w);
-            while (w != j)
-                shortcut.Add(w = H[w, j] - 1);
-            return shortcut;
+            else Console.WriteLine("Нет пути");
+            var way = Shotcut(H, V[0] - 1, V[1] - 1);
+            Console.WriteLine($"Кратчайший путь из v{V[0]} в v{V[1]}");
+            foreach (var i in way)
+                Console.Write($"v{i} ");
+            Console.ReadKey();
         }
         static int[,] Matrix_Read()
         {
@@ -81,13 +72,13 @@ namespace Алгоритм_флойда
                     matrix[i, j] = (str[j] == "-" ? Int32.MaxValue : int.Parse(str[j]));
             }
             return matrix;
-        }   
+        }
         static void Matrix_Write(int[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
-                    Console.Write(matrix[i,j] == Int32.MaxValue ? $"- " : $"{matrix[i, j]} ");
+                    Console.Write(matrix[i, j] == Int32.MaxValue ? $"- " : $"{matrix[i, j]} ");
                 Console.WriteLine();
             }
         }
@@ -100,5 +91,25 @@ namespace Алгоритм_флойда
            {Int32.MaxValue, Int32.MaxValue, 2, Int32.MaxValue, 0, Int32.MaxValue},
            {Int32.MaxValue, Int32.MaxValue, Int32.MaxValue, 1, 3, 0}
         };
+        static void Massiv_Write(string name, int[] M)
+        {
+            Console.WriteLine( name);
+            foreach (var i in M)
+                Console.Write($"{i} ");
+            Console.WriteLine();
+        }
+        static int[] Shotcut(int[] H, int s, int t)
+        {
+            var cut = new List<int>();
+            cut.Add(t + 1);
+            while (s != t)
+            {
+                cut.Add(H[t]);
+                t = H[t] - 1;
+            }
+            cut.Reverse();
+            int[] A = cut.ToArray();
+            return A;
+        }
     }
 }
