@@ -19,8 +19,9 @@ static (string x1, string x2)[] Corteg_Read()
         }
 
 //Создание булевой матрицы по парам 
-static bool[,] Matrix_Read((string x1, string x2)[] corteg, string[] X, int len)
+static bool[,] Matrix_Read((string x1, string x2)[] corteg, string[] X)
         {
+            var len = X.Lenght; 
             bool[,] R = new bool[len, len];
             for (int j = 0; j < corteg.Length; j++)
             {
