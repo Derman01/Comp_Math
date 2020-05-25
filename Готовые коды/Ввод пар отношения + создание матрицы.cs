@@ -7,7 +7,7 @@ static (string x1, string x2)[] Corteg_Read()
             int i = 1; // счетчик
             Console.Write($"{i}. "); string[] A = Console.ReadLine().Split(' ');
             if (A.Length != 2) return corteg;
-            while (1 == 1 ) { 
+            while (true) { 
                 Array.Resize(ref corteg, i); //увеличиваем массив кортежей
                 corteg[i - 1].x1 = A[0]; corteg[i - 1].x2 = A[1]; //запоминаем элементы
                 i++; // увеличиваем счетчик
